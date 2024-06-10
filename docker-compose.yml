@@ -1,0 +1,78 @@
+version: '2'
+
+services:
+  frontend:
+    build: frontend
+    ports:
+      - "8080:80"
+    restart: always
+    
+  api:
+    build: api/backend
+    ports:
+      - "4000:80"
+    restart: always
+    
+  acl:
+    build: acl/backend
+    ports:
+      - "4100:80"
+    depends_on:
+      - acl_db  
+    restart: always  
+
+  acl_db:
+    image: mongo
+    ports:
+      - "27030:27017"
+    volumes:
+      - ./data/mongo/acl:/data/db
+    restart: always      
+  
+  content:
+    build: content/backend
+    ports:
+      - "4200:80"
+    depends_on:
+      - content_db  
+    restart: always  
+
+  content_db:
+    image: mongo
+    ports:
+      - "27040:27017"
+    volumes:
+      - ./data/mongo/content:/data/db
+    restart: always
+    
+  shop:
+    build: shop/backend
+    ports:
+      - "4300:80"
+    depends_on:
+      - shop_db  
+    restart: always  
+
+  shop_db:
+    image: mongo
+    ports:
+      - "27050:27017"
+    volumes:
+      - ./data/mongo/shop:/data/db
+    restart: always
+  
+  library:
+    build: library/backend
+    ports:
+      - "4400:80"
+    depends_on:
+      - library_db  
+    restart: always  
+
+  library_db:
+    image: mongo
+    ports:
+      - "27060:27017"
+    volumes:
+      - ./data/mongo/library:/data/db
+    restart: always  

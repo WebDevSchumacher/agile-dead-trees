@@ -1,0 +1,4 @@
+<a mat-raised-button color="primary" routerLink="/book/create">+</a>
+<div class="display-container" *ngIf="books.length>0">
+  <app-books-display *ngFor="let book of books" [book]=book [url]="'write'"></app-books-display>
+</div>

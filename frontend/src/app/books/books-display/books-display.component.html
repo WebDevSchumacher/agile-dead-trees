@@ -1,0 +1,14 @@
+<mat-card class="display-card" appMaterialElevation appDisplayExtend>
+  <a [routerLink]="[url , {id: book.id, title: book.title, author: book.author, isbn:book.isbn, price:book.price}]">
+    <img mat-card-image src="assets/covers/{{book.title}}.jpg">
+  </a>
+  <mat-card-header>
+    <mat-card-title>
+      {{book.title}}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{book.author}}</p>
+    <p>{{book.isbn}}</p>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,13 @@
+<mat-card>
+  <form (submit)="onSaveBook(bookForm)" #bookForm="ngForm">
+    <mat-form-field>
+      <input matInput type="text" ngModel name="title" required #title="ngModel" placeholder="Titel">
+      <mat-error *ngIf="title.invalid">Titel eingeben</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" ngModel name="isbn" required #isbn="ngModel" placeholder="ISBN">
+      <mat-error *ngIf="isbn.invalid">ISBN eingeben</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </form>
+</mat-card>

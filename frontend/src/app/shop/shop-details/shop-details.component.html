@@ -1,0 +1,7 @@
+<div *ngIf="!isLoading">
+  <img mat-card-image src="assets/covers/{{this.book.title}}.jpg">
+  <p>{{this.book.title}}</p>
+  <p>{{this.book.author}}</p>
+  <p>{{this.book.isbn}}</p>
+  <button (click)="onBuy()" mat-raised-button color="primary" >Buy</button>
+</div>

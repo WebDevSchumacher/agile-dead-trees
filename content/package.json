@@ -1,0 +1,28 @@
+{
+  "name": "photon-node",
+  "version": "0.0.0",
+  "scripts": {
+    "start:server": "nodemon ./backend/server.js"
+  },
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.8",
+    "mongoose-unique-validator": "^2.0.3",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/jasmine": "~3.6.0",
+    "@types/node": "^12.11.1",
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "nodemon": "^2.0.7",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.1.2"
+  }
+}

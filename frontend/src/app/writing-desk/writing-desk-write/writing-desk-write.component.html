@@ -1,0 +1,8 @@
+<form (submit)="onSaveChapter(chapterForm)" #chapterForm="ngForm">
+  <mat-form-field>
+    <input matInput type="text" ngModel name="title" required #title="ngModel" placeholder="Titel">
+    <mat-error *ngIf="title.invalid">Titel eingeben</mat-error>
+  </mat-form-field>
+<quill-editor type="text" ngModel name="editor" required #editor="ngModel"></quill-editor>
+  <button mat-raised-button color="primary" type="submit">Save</button>
+</form>
